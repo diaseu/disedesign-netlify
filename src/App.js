@@ -1,50 +1,69 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import 'antd/dist/antd.css'
+import './App.css'
+import React from 'react';
+import { Navbar } from './components'
+import { Start } from './pages'
+import { Layout, Menu, Breadcrumb } from 'antd';
+import { Row, Col, Divider } from 'antd';
+import {
+  DesktopOutlined,
+  PieChartOutlined,
+  FileOutlined,
+  TeamOutlined,
+  UserOutlined,
+  MailOutlined
+} from '@ant-design/icons';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
+const { SubMenu } = Menu;
+const { Header, Content, Footer, Sider } = Layout;
 
-  handleClick = api => e => {
-    e.preventDefault()
+export default class App extends React.Component {
 
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
 
   render() {
-    const { loading, msg } = this.state
 
     return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
+      <Router>
+        <Switch>
+          <Layout style={{ minHeight: '100vh' }}>
+            <Navbar />
+            <Layout className="site-layout">
+              {/* <Header className="site-layout-background" style={{ padding: 0 }} /> */}
+
+              <Route exact path="/">
+                <Start
+                  page='Start'
+                />
+              </Route>
+
+              {/* <Route path="/about">
+                <Content>
+                  <About
+                    page='About'
+                  />
+                </Content>
+              </Route>
+              <Route path="/work">
+                <Portfolio
+                  page='Work'
+                />
+              </Route>
+              <Route path="/contact">
+                <Contact
+                  page='Contact'
+                />
+              </Route> */}
+
+            </Layout>
+            {/* <Footer style={{ textAlign: 'center', fontSize: 10 }}> &hearts; Made by Dia Seu 2021</Footer> */}
+          </Layout>
+        </Switch>
+      </Router>
+    );
   }
 }
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Coming soon.
-          </p>
-          <LambdaDemo />
-        </header>
-      </div>
-    )
-  }
-}
-
-export default App
