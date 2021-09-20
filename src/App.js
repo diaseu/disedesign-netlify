@@ -2,13 +2,14 @@ import 'antd/dist/antd.css'
 import './App.css'
 import React from 'react';
 import { Navbar } from './components'
-import { Start } from './pages'
+import { Start, About } from './pages'
 import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+
 
 export default class App extends React.Component {
 
@@ -29,19 +30,19 @@ export default class App extends React.Component {
                 />
               </Route>
 
-              {/* <Route path="/about">
-                <Content>
+              <Route path="/about">
                   <About
                     page='About'
                   />
-                </Content>
               </Route>
-              <Route path="/work">
+
+              {/* <Route path="/work">
                 <Portfolio
                   page='Work'
                 />
-              </Route>
-              <Route path="/contact">
+              </Route> */}
+
+              {/* <Route path="/contact">
                 <Contact
                   page='Contact'
                 />
