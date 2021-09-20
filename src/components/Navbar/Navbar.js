@@ -2,12 +2,10 @@ import React from 'react';
 import 'antd/dist/antd.css'
 import { Layout } from 'antd';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route, Link
+  Link
 } from "react-router-dom";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 
 const Navbar = ({ pages, setpageState }) => {
   // const { collapsed } = this.state;

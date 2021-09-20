@@ -1,14 +1,11 @@
 import React from 'react';
 import 'antd/dist/antd.css'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content } = Layout;
 
 
 const Start = props => {

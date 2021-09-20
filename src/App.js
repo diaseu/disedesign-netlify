@@ -3,24 +3,12 @@ import './App.css'
 import React from 'react';
 import { Navbar } from './components'
 import { Start } from './pages'
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Row, Col, Divider } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-  MailOutlined
-} from '@ant-design/icons';
+import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
 
 export default class App extends React.Component {
 
