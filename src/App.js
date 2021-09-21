@@ -2,7 +2,7 @@ import 'antd/dist/antd.css'
 import './App.css'
 import React from 'react';
 import { Navbar } from './components'
-import { Start, About } from './pages'
+import { Start, About, Portfolio } from './pages'
 import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
@@ -36,11 +36,11 @@ export default class App extends React.Component {
                   />
               </Route>
 
-              {/* <Route path="/work">
+              <Route path="/work">
                 <Portfolio
                   page='Work'
                 />
-              </Route> */}
+              </Route>
 
               {/* <Route path="/contact">
                 <Contact
