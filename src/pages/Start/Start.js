@@ -13,7 +13,6 @@ const Start = props => {
   return (
     <>
       <Content className="home">
-        {/* <h1 className="line">Diana Seung</h1> */}
         <span className="home-helper"></span>
         <Link to='/about'>
           <img src="https://i.imgur.com/rB5TRvL.png" alt="" className="home-logo" />

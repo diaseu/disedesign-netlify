@@ -1,18 +1,17 @@
 import React from 'react';
 import 'antd/dist/antd.css'
-import { Breadcrumb, Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
+import { Navcrumb } from '../../components'
 
+const { Title } = Typography;
 
 const About = props => {
 
   return (
     <>
-      <Breadcrumb style={{ margin: '16px' }}>
-        <Breadcrumb.Item>DIA SEU</Breadcrumb.Item>
-        <Breadcrumb.Item>{props.page}</Breadcrumb.Item>
-      </Breadcrumb>
+      <Navcrumb page={props.page} />
       <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-        <h1 className="line">Diana Seung</h1>
+        <Typography><Title className="line">Dia Seung</Title></Typography>
         <Row>
           <Col span={12}>
             <h2 className="text">Full-stack developer with an emphasis on front-end.<br />I believe in good design, hot coffee and the deity of cats. </h2>
